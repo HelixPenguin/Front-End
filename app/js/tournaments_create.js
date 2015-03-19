@@ -31,6 +31,7 @@ var tournaments = (function(module){
   module.submitTournament = function(event){
     event.preventDefault();
     module.image_array = [];
+    module.uploaded = 0;
     module.$files = $('.file');
     module.$files.splice(module.$files.length-1);
     module.$files.each(function(){
@@ -73,7 +74,6 @@ var tournaments = (function(module){
   };
 
   module.createProgress = function(){
-    module.uploaded = 0;
     var overlay = $('<div></div>').prependTo('body').attr('id', 'overlay');
     $('#signContainer').empty();
     var template = Handlebars.compile($('#progressTemplate').html());
