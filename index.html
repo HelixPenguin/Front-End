@@ -1,93 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Pixelect</title>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="/main.css">
-    <link href='http://fonts.googleapis.com/css?family=Luckiest+Guy|Quicksand: 400,700' rel='stylesheet' type='text/css'>
-    <!-- endbuild -->
-  </head>
-  <body>
-    <!--[if lt IE 7]>
+<!DOCTYPE html> <html> <head> <title>Pixelect</title> <meta charset="utf-8"> <meta name="description" content=""> <meta name="viewport" content="width=device-width"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="stylesheet" href="styles/main.css">  <body> <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    <nav>
-      <div>
-        <h1 id="logo"><a href="/">Pixelect</a></h1>
-        <ul>
-          <li style='display: none' id='tournamentDropNav'>Tournaments
-            <ul id='tournamentDropNavMenu' style='display:none'>
-              <li id='newTournamentNav'>Create</li>
-              <li id='tournamentOpenIndexNav'>Open</li>
-              <li id='tournamentClosedIndexNav'>Closed</li>
-            </ul>
-          <li style='display: none' id='userNav'>User Page</li>
-          <li style='display: none' id='signInNav'>Sign In</li>
-          <li style='display: none' id='signUpNav'>Sign Up</li>
-          <li style='display: none' id='signOutNav'>Sign Out</li>
-        </ul>
-      </div>
-    </nav>
-    <header><h1>Which pic is best? You decide.</h1></header>
-    <div id="container">
-    </div>
-    <div id='openContainer'></div>
-    <div id='closedContainer'></div>
-    <div id='signContainer'></div>
-
-
-    <!-- build:js(.) scripts/oldieshim.js -->
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.js"></script>
-    <![endif]-->
-    <!-- endbuild -->
-
-
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/handlebars/handlebars.js"></script>
-    <script src="bower_components/underscore/underscore.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="js/app.js" type="text/javascript"></script>
-    <script src="js/user_sign_in.js" type="text/javascript"></script>
-    <script src="js/user_sign_up.js" type="text/javascript"></script>
-    <script src="js/user_show.js" type="text/javascript"></script>
-    <script src="js/user_sign_out.js" type="text/javascript"></script>
-    <script src="js/tournaments_index_all.js" type="text/javascript"></script>
-    <script src="js/tournaments_create.js" type="text/javascript"></script>
-    <script src="js/tournaments_show.js" type="text/javascript"></script>
-    <script src="js/tournaments_destroy.js" type="text/javascript"></script>
-    <script src="js/image_create.js" type="text/javascript"></script>
-    <script src="js/image_update.js" type="text/javascript"></script>
-    <script src="js/comment_create.js" type="text/javascript"></script>
-    <script src="js/nav.js" type="text/javascript"></script>
-
-    <!-- endbuild -->
-
-    <script type='text/x-handlebars-template' id='userShowTemplate'>
-        <div id='userInfo'>
+    <![endif]--> <nav> <div> <h1 id="logo"><a href="/">Pixelect</a></h1> <ul> <li style="display: none" id="tournamentDropNav">Tournaments <ul id="tournamentDropNavMenu" style="display:none"> <li id="newTournamentNav">Create</li> <li id="tournamentOpenIndexNav">Open</li> <li id="tournamentClosedIndexNav">Closed</li> </ul> </li><li style="display: none" id="userNav">User Page</li> <li style="display: none" id="signInNav">Sign In</li> <li style="display: none" id="signUpNav">Sign Up</li> <li style="display: none" id="signOutNav">Sign Out</li> </ul> </div> </nav> <header><h1>Which pic is best? You decide.</h1></header> <div id="container"> </div> <div id="openContainer"></div> <div id="closedContainer"></div> <div id="signContainer"></div> <!--[if lt IE 9]>
+    <script src="scripts/oldieshim.d41d8cd9.js"></script>
+    <![endif]--> <script src="scripts/vendor.b1458ebc.js"></script> <script src="scripts/scripts.6e25713d.js"></script> <script type="text/x-handlebars-template" id="userShowTemplate"><div id='userInfo'>
           <h2>{{user.name}}</h2>
           <h3>{{user.email}}</h3>
         </div>
         <hr>
-        <h4>Create a Tournament<h4>
-    </script>
-
-    <script type='text/x-handlebars-template' id='allTournamentsTemplate'>
-      <div id='all-tournaments'>
+        <h4>Create a Tournament<h4></script> <script type="text/x-handlebars-template" id="allTournamentsTemplate"><div id='all-tournaments'>
         <h2>{{tournaments.status}}</h2>
         <ul>
           {{#each tournaments}}
@@ -97,11 +17,7 @@
             <hr>
           {{/each}}
         </ul>
-      </div>
-    </script>
-
-    <script type='text/x-handlebars-template' id='userTournamentsTemplate'>
-      <div id='user-tournaments'>
+      </div></script> <script type="text/x-handlebars-template" id="userTournamentsTemplate"><div id='user-tournaments'>
         <h3>Your Tournaments:</h3>
         <ul>
           {{#if tournaments}}
@@ -118,37 +34,21 @@
 
 
         </ul>
-      </div>
-    </script>
-
-    <script type='text/x-handlebars-template' id='newTournamentTemplate'>
-        <div id='newTournament'>
+      </div></script> <script type="text/x-handlebars-template" id="newTournamentTemplate"><div id='newTournament'>
             <label for='question'>Question</label>
             <input type='text' id='question'/>
             <ul id='fileList'></ul>
             <div id='uploadContainer'></div>
             <button id='submitNewTournament'>Create</button>
-        </div>
-    </script>
-
-    <script type="text/x-handlebars-template" id="imageHeaderTemplate">
-      <div class="imageHeader">
+        </div></script> <script type="text/x-handlebars-template" id="imageHeaderTemplate"><div class="imageHeader">
         <form class='uploadForm'>
           <input class='file' name="file" type="file"/>
         </form>
-      </div>
-    </script>
-
-   <script type='text/x-handlebars-template' id='showClosedTournamentTemplate'>
-     <div id='closedTournament'>
+      </div></script> <script type="text/x-handlebars-template" id="showClosedTournamentTemplate"><div id='closedTournament'>
        <h3 id='winnerTag'>{{tournament.question}} (Closed)</h3>
        <h4>Winner:</h4>
        <img src="{{tournament.popular.url}}" alt="winning picture">
-      </div>
-    </script>
-
-    <script type='text/x-handlebars-template' id='showClosedCommentsTemplate'>
-      <div id="comments_container">
+      </div></script> <script type="text/x-handlebars-template" id="showClosedCommentsTemplate"><div id="comments_container">
 
         {{#if tournament.current}}
           <div id='newComment'>
@@ -171,19 +71,11 @@
             {{/if}}
           </div>
         {{/each}}
-      </div>
-    </script>
-
-    <script type='text/x-handlebars-template' id='showVisitorClosedTournamentTemplate'>
-      <div id='closedTournament'>
+      </div></script> <script type="text/x-handlebars-template" id="showVisitorClosedTournamentTemplate"><div id='closedTournament'>
         <h3 id='winnerTag'>{{tournament.question}} (Closed)</h3>
         <h3>Winner:</h3>
         <img src="{{tournament.popular.url}}" alt="winning picture">
-      </div>
-    </script>
-
-    <script type='text/x-handlebars-template' id='showVisitorClosedCommentsTemplate'>
-      <div id="comments_container">
+      </div></script> <script type="text/x-handlebars-template" id="showVisitorClosedCommentsTemplate"><div id="comments_container">
         {{#if tournament.current}}
           <div id='newComment'>
             <form id='newCommentForm'>
@@ -204,35 +96,19 @@
               {{/if}}
           </div>
         {{/each}}
-      </div>
-    </script>
-
-    <script type="text/x-handlebars-template" id="showLeftTemplate">
-      <div class="imageContainer" id="leftImage">
+      </div></script> <script type="text/x-handlebars-template" id="showLeftTemplate"><div class="imageContainer" id="leftImage">
         <img src="{{tournament.leftImage.url}}" class="activePick" />
         <button class='leftFlag' id='{{tournament.leftImage.id}}'>flag image</button>
-      </div>
-    </script>
-
-    <script type="text/x-handlebars-template" id="showRightTemplate">
-      <div class="imageContainer" id="rightImage">
+      </div></script> <script type="text/x-handlebars-template" id="showRightTemplate"><div class="imageContainer" id="rightImage">
         <img src="{{tournament.rightImage.url}}" class="activePick" />
         <button class='rightFlag' id='{{tournament.rightImage.id}}'>flag image</button>
-      </div>
-    </script>
-
-  <script type='text/x-handlebars-template' id='showWinnerTournamentTemplate'>
-    <div id='winnerTournament'>
+      </div></script> <script type="text/x-handlebars-template" id="showWinnerTournamentTemplate"><div id='winnerTournament'>
       <h3 id='winnerTag'>{{tournament.question}}</h3>
       <h4>Your Pixelection:</h4>
       <img src="{{tournament.winner.url}}" alt="your winning picture">
       <h4>Community's Pixelection:</h4>
       <img src="{{tournament.popular.url}}" alt="community's winning picture">
-    </div>
-  </script>
-
-  <script type='text/x-handlebars-template' id='showWinnerCommentsTemplate'>
-    <div id="comments_container">
+    </div></script> <script type="text/x-handlebars-template" id="showWinnerCommentsTemplate"><div id="comments_container">
       {{#if tournament.current}}
         <div id='newComment'>
             <label for='comment'>Comment</label>
@@ -254,22 +130,14 @@
           {{/if}}
         </div>
       {{/each}}
-    </div>
-  </script>
-
-    <script type='text/x-handlebars-template' id='showVisitorWinnerTournamentTemplate'>
-     <div id='winnerTournament'>
+    </div></script> <script type="text/x-handlebars-template" id="showVisitorWinnerTournamentTemplate"><div id='winnerTournament'>
        <h3 id='winnerTag'>{{tournament.question}}</h3>
        <h4>Your Pixelection:</h4>
        <img src="{{tournament.winner.url}}" alt="your winning picture">
        <h4>Community's Pixelection:</h4>
        <img src="{{tournament.popular.url}}" alt="community's winning picture">
        <hr>
-    </div>
-  </script>
-
-  <script type='text/x-handlebars-template' id='showVisitorWinnerCommentsTemplate'>
-    <div id="comments_container">
+    </div></script> <script type="text/x-handlebars-template" id="showVisitorWinnerCommentsTemplate"><div id="comments_container">
 
       {{#if tournament.current}}
         <div id='newComment'>
@@ -288,11 +156,7 @@
           {{/if}}
         </div>
       {{/each}}
-    </div>
-  </script>
-
-    <script type='text/x-handlebars-template' id='signInTemplate'>
-      <section class="modal" id='signInModal'>
+    </div></script> <script type="text/x-handlebars-template" id="signInTemplate"><section class="modal" id='signInModal'>
         <header>
           <h1>Login to Pixelect</h1>
         </header>
@@ -313,11 +177,7 @@
           <button id='signSubmit'>Sign In</button>
           <button id='signCancel'>Cancel</button>
         </div>
-      </section>
-    </script>
-
-    <script type='text/x-handlebars-template' id='signUpTemplate'>
-      <section class="modal">
+      </section></script> <script type="text/x-handlebars-template" id="signUpTemplate"><section class="modal">
         <header>
           <h1>Register for Pixelect</h1>
         </header>
@@ -351,38 +211,16 @@
           <button id='signSubmit'>Sign Up</button>
           <button id='signCancel'>Cancel</button>
         </div>
-      </section>
-    </script>
-
-    <script type='text/x-handlebars-template' id='deleteTemplate'>
-      <section class="modal">
+      </section></script> <script type="text/x-handlebars-template" id="deleteTemplate"><section class="modal">
         <h1>Are you Sure?</h1>
         <input type='hidden' id='target_id' value='{{id.target}}'>
         <div id='buttons'>
           <button id='destroy'>Yes</button>
           <button id='cancel'>No</button>
         <div>
-      </section>
-    </script>
-
-    <script type='text/x-handlebars-template' id='openDescriptionTemplate'>
-      <p id='openMessage'>These are tournaments that you can vote on. They will stay open for 24 hours. Pick between pictures until you answer the best one. When you get to the end you can see the picture the community liked best. You will be able to share your thoughts there as well. Once a tournament closes you will still be able to comment, but you won't be able to vote.</p>
-    </script>
-
-    <script type='text/x-handlebars-template' id='closedDescriptionTemplate'>
-      <p id='closedMessage'>These are tournaments that were created over 24 hours ago. You won't be able to vote, but you can see what picture was most popular and share your thoughts.</p>
-    </script>
-
-    <script type='text/x-handlebars-template' id='progressTemplate'>
-      <section class='modal'>
+      </section></script> <script type="text/x-handlebars-template" id="openDescriptionTemplate"><p id='openMessage'>These are tournaments that you can vote on. They will stay open for 24 hours. Pick between pictures until you answer the best one. When you get to the end you can see the picture the community liked best. You will be able to share your thoughts there as well. Once a tournament closes you will still be able to comment, but you won't be able to vote.</p></script> <script type="text/x-handlebars-template" id="closedDescriptionTemplate"><p id='closedMessage'>These are tournaments that were created over 24 hours ago. You won't be able to vote, but you can see what picture was most popular and share your thoughts.</p></script> <script type="text/x-handlebars-template" id="progressTemplate"><section class='modal'>
         <h1 id='completed'>0%</h1>
         <div id='progress'>
           <div id='progressBar'></div>
         </div>
-      </section>
-    </script>
-
-
-
-  </body>
-</html>
+      </section></script>  
